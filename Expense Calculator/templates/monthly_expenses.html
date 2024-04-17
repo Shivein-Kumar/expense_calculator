@@ -1,0 +1,24 @@
+<!-- templates/monthly_expenses.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monthly Expenses</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Monthly Expenses</h1>
+    <ul>
+        {% for month, category_totals in monthly_category_totals.items() %}
+        <li>{{ month }}:
+            <ul>
+                {% for category, total in category_totals.items() %}
+                <li>{{ category }}: {{ total }}</li>
+                {% endfor %}
+            </ul>
+            <strong>Total: {{ monthly_totals[month] }}</strong>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Go back to add expense</a>
+</body>
+</html>

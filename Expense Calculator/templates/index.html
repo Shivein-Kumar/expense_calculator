@@ -1,0 +1,24 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Calculator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Expense Calculator</h1>
+    <form action="/add_expense" method="post" class="container">
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount"><br><br>
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category"><br><br>
+        <label for="month">Month:</label>
+        <input type="text" id="month" name="month"><br><br>
+        <input type="submit" value="Add Expense">
+    </form>
+    <br>
+    <a href="/monthly_expenses">View Monthly Expenses</a>
+</body>
+</html>
+
+
